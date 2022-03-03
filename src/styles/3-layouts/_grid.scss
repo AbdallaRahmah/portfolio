@@ -1,0 +1,49 @@
+// mixins incloude
+@use "../5-utils/mixins" as *;
+
+// ************************
+// container config and set
+// ************************
+.container {
+  margin: 0 auto;
+  width: 100%;
+  @include mobile {
+    & {
+      padding: 0 24px;
+    }
+  }
+
+  @include tablet {
+    & {
+      padding: 0 24px;
+    }
+  }
+
+  @include labtop {
+    & {
+      width: 720px;
+      padding: 0;
+    }
+  }
+
+  @include large {
+    & {
+      width: 960px;
+      padding: 0;
+    }
+  }
+
+  @include x-large {
+    & {
+      width: 1140px;
+      padding: 0;
+    }
+  }
+
+  @include xx-large {
+    & {
+      width: 1260px;
+      padding: 0;
+    }
+  }
+}

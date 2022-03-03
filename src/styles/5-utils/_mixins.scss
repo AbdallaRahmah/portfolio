@@ -1,0 +1,49 @@
+// **************************************
+// media queri mixin for all device sizes
+// **************************************
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 577px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin labtop {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin x-large {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin xx-large {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// all large screen media sizes exept mobile and tablet
+@mixin all-large-media {
+  @include labtop {
+    @content;
+  }
+  @include large {
+    @content;
+  }
+  @include x-large {
+    @content;
+  }
+  @include xx-large {
+    @content;
+  }
+}
