@@ -1,0 +1,15 @@
+@use "1-base/base" as *;
+
+@use "3-layouts/grid" as *;
+
+@use "./3-layouts/header" as *;
+
+@use "./5-utils/mixins" as *;
+@use "./5-utils/variables" as *;
+
+// start
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: $dark;
+  color: $lighte;
+}

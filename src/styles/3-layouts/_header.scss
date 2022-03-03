@@ -1,0 +1,114 @@
+// adding mixins to the file
+@use "../5-utils/mixins" as *;
+// adding variables to the file
+@use "../5-utils/variables" as *;
+
+// start
+.header {
+  margin: 2rem auto;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  @include all-large-media {
+    & {
+      padding: 0 2rem;
+    }
+  }
+  .header__logo {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $lighte;
+    text-transform: capitalize;
+    letter-spacing: -2px;
+    cursor: pointer;
+    position: relative;
+    @include all-large-media {
+      & {
+        width: 20%;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10%;
+      left: 0;
+      background-color: $yellow;
+      height: 10px;
+      width: 50px;
+      border-radius: 1rem;
+    }
+  }
+  .header__nav {
+    margin: 1.5rem 0;
+    width: 100%;
+    text-align: center;
+    @include all-large-media {
+      & {
+        margin: 0;
+        width: 65%;
+        text-align: right;
+      }
+    }
+    ul {
+      padding: 0;
+      li {
+        display: inline-block;
+        a {
+          font-size: 1.3rem;
+          color: $lighte;
+          text-transform: uppercase;
+          padding: 1rem;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $yellow;
+            height: 5px;
+            width: 0%;
+            border-radius: 1rem;
+            transition: 0.3s;
+          }
+          &:hover::after,
+          &:hover::before {
+            width: 100%;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $yellow;
+            height: 5px;
+            width: 0%;
+            border-radius: 1rem;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  .header--button {
+    padding: 1rem;
+    background-color: $yellow;
+    color: $lighte;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    @include all-large-media {
+      & {
+        width: 15%;
+      }
+    }
+    &:active{
+      transform: translate(0, 2px);
+    }
+  }
+}
