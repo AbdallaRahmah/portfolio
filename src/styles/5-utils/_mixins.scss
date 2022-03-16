@@ -32,6 +32,16 @@
   }
 }
 
+// all small screen media sizes (mobile and tablet)
+@mixin all-small-media {
+  @include mobile {
+    @content;
+  }
+  @include tablet {
+    @content;
+  }
+}
+
 // all large screen media sizes exept mobile and tablet
 @mixin all-large-media {
   @include labtop {
