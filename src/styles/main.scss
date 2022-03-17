@@ -4,6 +4,8 @@
 
 @use "./3-layouts/header" as *;
 
+@use "./4-pages/main";
+
 @use "./5-utils/mixins" as *;
 @use "./5-utils/variables" as *;
 
